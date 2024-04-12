@@ -244,9 +244,6 @@ This function is valuable for analyzing crime trends over time and space. It ena
 #### District Map Based on Crime
 ![](Visualizations/district_map.png)
 
-#### Histogram of Crimes
-![](Visualisations/hist_crimes.png?raw=true)
-
 #### Time Analysis
 ![](Visualizations/time_analysis.png)
 
