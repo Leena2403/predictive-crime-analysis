@@ -7,6 +7,9 @@
 
 #### Main Interface Look 
 ![](Visualisations/interface%20look.png?raw=true)
+
+**Note** 
+The web app is still under construction. The authors are in the process of updating and bulding the complete web app.
   
 
 # Solutions Provided
@@ -220,7 +223,7 @@ This function is useful for identifying the districts with the highest incidence
   - Displays the total count of the specified crime in the selected year on the map.
 
 
-This function is valuable for analyzing crime trends over time and space. It enables stakeholders to visualize the spatial distribution of crimes for a particular crime type and year. Law enforcement agencies can use this information to identify areas of high criminal activity, allocate resources, and plan targeted interventions. Additionally, policymakers can utilize crime maps to assess the effectiveness of crime prevention measures and prioritize areas for intervention based on crime incidence.```
+This function is valuable for analyzing crime trends over time and space. It enables stakeholders to visualize the spatial distribution of crimes for a particular crime type and year. Law enforcement agencies can use this information to identify areas of high criminal activity, allocate resources, and plan targeted interventions. Additionally, policymakers can utilize crime maps to assess the effectiveness of crime prevention measures and prioritize areas for intervention based on crime incidence.
 
 
 #### Heatmap of districts given category of crime
