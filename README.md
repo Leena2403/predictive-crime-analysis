@@ -6,7 +6,7 @@
 
 
 #### Main Interface Look 
-![](Visualisations/interface%20look.png?raw=true)
+![](Visualizations/interface.png?raw=true)
 
 **Note** 
 The web app is still under construction. The authors are in the process of updating and bulding the complete web app.
@@ -233,22 +233,25 @@ This function is valuable for analyzing crime trends over time and space. It ena
 
 
 #### Heatmap of districts given category of crime
-![](Visualisations/dist_heat_map.png?raw=true)
+![](Visualizations/district_heatmap.png)
 
-#### Confidence Matrix for criminals based on the crime and location selected
-![](Visualisations/confidence%20matrix.png?raw=true)
+#### District Analysis
+![](Visualizations/district_analyssi.png?raw=true)
 
-#### Bar Graph of Top Crimes per District
-![](Visualisations/crime_per_year_district.jpg?raw=true)
+#### Criminal Analysis
+![](Visualizations/criminal_analysis.png?raw=true)
+
+#### District Map Based on Crime
+![](Visualizations/district_map.png)
 
 #### Histogram of Crimes
 ![](Visualisations/hist_crimes.png?raw=true)
 
-#### Victim Details 
-![](Visualisations/victim%20details.png)
+#### Time Analysis
+![](Visualizations/time_analysis.png)
 
-#### Deployment Plan
-![](Visualisations/deploment%20model%20ai.png)
+#### Police Analysis
+![](Visualizations/police_perf.png)
 
 
 
