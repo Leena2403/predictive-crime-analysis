@@ -1,8 +1,12 @@
-# Predictive Crime Analysis
+# Predictive Crime Analysis First Prototype Using Streamlit
 * Author: Leena Goyal [@Leena2403](https://www.github.com/Leena2403) and Souryadeepta Majumdar [@majumdarsouryadeepta](https://www.github.com/majumdarsouryadeepta)
 * Created on: April 12, 2024
 * Description: Data analysis, exploration & visualization on crime incidents in Karnataka
 * Curated dataset: Provided by KSP
+
+
+#### Main Interface Look 
+![](Visualisations/interface%20look.png?raw=true)
   
 
 # Solutions Provided
@@ -40,31 +44,31 @@ Using Scikit Learn, predictions have been made for both crime and criminal analy
 
 ## Files
 
-**Data Exploration & Visualization**
-- [kaggle-sf-crime-exploration.ipynb](https://github.com/k-chuang/kaggle-sf-crime/blob/master/kaggle-sf-crime-exploration.ipynb) - jupyter notebook with initial data explorations & visualizations of Karnataka Crime.
-
-**Data Mining & Machine Learning**
-- [kaggle-sf-crime-prediction.ipynb](https://github.com/k-chuang/kaggle-sf-crime/blob/master/kaggle-sf-crime-prediction.ipynb) - files with end to end data science workflow, such as data preprocessing, feature engineering, building baseline models, model selection, hyperparameter tuning, and predictions.
-
 ## Folders
-**Data Analysis**
-- [Analysis](https://github.com/k-chuang/kaggle-sf-crime/blob/master/visualizations) - folder containing the actual jupyter notebook. Comprehensive crime, victim, year, district and criminal analysis is provided.
-
-**Data Visualizations**
-- [Visualizations](https://github.com/k-chuang/kaggle-sf-crime/blob/master/visualizations) - folder containing visualizations of the data (Heatmaps, color coded maps, maps, etc.)
+**Visualisationss**
+- [Visualisations](https://github.com/Leena2403/predictive-crime-analysis-first_prototype/tree/main/Visualisations) - The main visualisations from our web app providing the png files for bar graphs, line plots, and maps.
+ - The main visualisations from our web app providing the png files for bar graphs, line plots and maps.
 - Districtwise plotting of crime along with the heat maps is present.
 - Vulnerable crime areas are included using records of victim analysis. Folium is being used to display the auto-generated html files.
 
 **Data Predictions**
 
-- [Predictions](https://github.com/k-chuang/kaggle-sf-crime/blob/master/cv_results) - folder containing the hyperparameter tuning results (accuracy score & mean squared error) at each iteration of different machine learning models.
+- [Crime Prediction](https://github.com/Leena2403/predictive-crime-analysis-first_prototype/blob/main/crime_prediction.py) - Link to the `crime_prediction.py` file in the repository.
+ - folder containing the hyperparameter tuning results (accuracy score & mean squared error) at each iteration of different machine learning models.
 - Crime Prediction is using regression models; Decision Tree Regression and XGBoost Regression for predicting the number of crimes for particular crime head mentioned in FIR dataset. Using hyperparameter tuning outputs, the output is toggled between the abovementioned models based on their accuracy scores and mean squared error. The model is able to achieve almost 99% accuracy scores.
 - Criminal Prediction is using Random Forest Classifier to predict the criminal behavior based on certain parameters like crime history, that helps in identifying the type of crime that can be committed by the criminal. This is currently a low accuracy model due to discrepencies faced for data quality and can be improved by further upgrading the data.
 - Criminal Prediction Original is a heavier and more accurate model of criminal prediction which uses a similar approach as the previously mentioned point, but it refers to three distinct datasets; `VictimInfoDetails, FIR_Details_Data, Accused_Person_Info`. This helps in analysing the socio-economic background, age, profession, caste, etc. of the criminal and the intended motives as well as injuries incurred by the criminal.
 - Districtwise crimes uses Linear Regression, Decision Tree Regession and Random Forest Regression for providing an estimated count of crimes for particular district in upcoming year. Hyperparameter tuning is used on accuracy scores & mean-squared-error to produce the most accurate count of crimes.
 
+**Criminal Prediction
+- [Criminal Prediction](https://github.com/Leena2403/predictive-crime-analysis-first_prototype/blob/main/criminal_prediction.py) - Link to the `crime_prediction.py` file in the repository.
+- Criminal prediction is uses a combination of parameters like District, Unit name, month, year and crime no. and accordingly filters the dataset to fetch the probable criminals for a possible crime. Further it uses conditional probability to compute a statistical model called "Confidence Matrix". The graph and tabular output is hence computed as a result.
+- The Arrested Person's id is used to fetch the information of a previously arrested criminal. This helps in spotting a criminal easily.
+- The Predictive Criminal Analysis uses FIR number, Unit ID and Crime Number and further uses Random Forest Classifier to provide the possible Crime commited by the criminal and hence helps in finding the crimes that a criminal can commit.
+
 **Deployment Plan AI**
 
+- [Deployment Plan](https://github.com/Leena2403/predictive-crime-analysis-first_prototype/blob/main/DeploymentPlan.py) - Link to the `DeploymentPlan.py` file in the repository.
 - Clustering of the crime heads is achieved by approaching K-means clustering. A thorough elbow-analysis is conducted in order to retrieve the ideal cluster size, which came out to be 18 in this specific case. A new dataset which contains the crime head corresponding to its cluster is created and stored for ease of access namely cluster_dict. Using clustering information different prompts have been stored in an array which has been using supportive prompts from pre-existing GenAI models; ChatGPT 3.5 Turbo. API approaches were made, however, it couldn't be successfully deployed due to the current upgradation discrepencies from the organisations. However, API based services can be still integrated in the current model, once the services resume. Till then the self-built array provides a comprehensive solution to each and every clustered crimes.
 - Each deployment plan is provided for each beat that is chosen by the user and is flexible enough to provide a deployment plan for any range of locations.
 - Each plan has a group of suggestions which not only provides the needful information for the police but also suggests the interactive activities that are being needed to involve the community and educate the potential victims hence spreading awareness, providing a holistic approach to the intended audience.
@@ -75,16 +79,27 @@ Dataset contains incidents derived from KSP Crime Incident Reporting system. The
 ## Interface
 - The whole interface has been created using Streamlit. The functions from jupyter notebook and prediction analysis have been re-used and made compatible for streamlit background. Six different categories of analysis has been provided `District Analysis, Crime Analysis, Time Analysis, Criminal Analysis, Victim Analysis, Beat/Police Analysis`. For each of the category, comprehensive and useful analysis, prediction and maps have been implemented.
 - All the images have been taken from Unsplash for the use case in our project.
-- 
+
 
 #### Heatmap of districts given category of crime
-![](visualizations/PdDistrict_per_crime_category_heatmap.png?raw=true)
+![](Visualisations/dist_heat_map.png?raw=true)
 
-#### Lineplot of year given category of Crime
-![](visualizations/Year.png?raw=true)
+#### Confidence Matrix for criminals based on the crime and location selected
+![](Visualisations/confidence%20matrix.png?raw=true)
 
-#### Histograms of year given category of Crime
-![](visualizations/Year.png?raw=true)
+#### Bar Graph of Top Crimes per District
+![](Visualisations/crime_per_year_district.jpg?raw=true)
+
+#### Histogram of Crimes
+![](Visualisations/hist_crimes.png?raw=true)
+
+#### Victim Details 
+![](Visualisations/victim%20details.png)
+
+#### Deployment Plan
+![](Visualisations/deploment%20model%20ai.png)
+
+
 
 
 
