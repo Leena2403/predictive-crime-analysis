@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body.dark-mode {
+    background-color: #333;
+    color: #f9f9f9;
+}
+.bodyel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+span{
+    display: flex;
+    flex-direction: column;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+label, select{
+    width: 200px;
+    font-size: 20px;
+    margin: auto 80px;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+button{
+    width: 100px;
+    height: 50px;
+    margin: auto 100px;
+    border-radius: 20px;
+}
+
+.image {
+    margin-left: 145px;
+    width: 600px;
+    height: 300px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    background-color: grey;
+    opacity: 0.7;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#homepage{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type:none;
+    padding: 0px;
+    cursor: pointer;
+}
+nav ul li{
+    margin: 2px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+li::before {
+    content: "\25BC";
+    display: inline-block;
+    width: 1em;
+    margin-left: 1em;
+    text-align: center;
+  }
+nav li:hover{
+    filter: invert(1);
+}
+.usables{
+    display: flex;
+}
+header.dark-mode {
+    filter: invert(1);
+  }
+
+button:hover{
+    filter: invert(1);
+}
+a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+a:hover {
+    text-decoration: none;
+  }
+.material-icons {
+    font-family: 'Material Icons', sans-serif;
+}
+
+#crimeChart {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    height: 400px;
+}

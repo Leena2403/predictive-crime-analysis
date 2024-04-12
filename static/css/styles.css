@@ -1,0 +1,175 @@
+:root {
+    --background-color: #f9f9f9;
+    --text-color: #333;
+}
+
+.cont {
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: black;
+    overflow: hidden;
+    justify-content: space-between;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cont:hover {
+    transform: scale(1.1);
+}
+
+.el {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.cont:hover .el {
+    opacity: 0.5;
+}
+
+.im-cont {
+    overflow: hidden;
+    width: 400px;
+    height: 300px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.im-cont img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+    filter: grayscale(30%);
+}
+
+.cont:hover .im-cont img {
+    filter: grayscale(0%); 
+    transform: scale(1.1);
+}
+
+
+.cont p {
+    background-color: black;
+    color: white;
+    position: inherit;
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-top: -14px;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    height: 50px;
+}
+
+header {
+    background-color: grey;
+    opacity: 0.7;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .options {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+#homepage {
+    font-size: 35px;
+    font-family: sans-serif;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0px;
+    cursor: pointer;
+}
+
+nav ul li {
+    font-size: 22px;
+    margin: 2px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+li::before {
+    content: "\25BC";
+    display: inline-block;
+    width: 1em;
+    margin-left: 1em;
+    text-align: center;
+}
+
+nav li:hover {
+    filter: invert(1);
+}
+
+.usables {
+    display: flex;
+}
+
+.dark-mode {
+    --background-color: #333;
+    /* Dark mode background color */
+    --text-color: #f9f9f9;
+    /* Dark mode text color */
+}
+
+body.dark-mode div p {
+    filter: invert(1);
+}
+
+header.dark-mode {
+    filter: invert(1);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+button:hover {
+    filter: invert(1);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
