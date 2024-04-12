@@ -45,7 +45,44 @@ The data ranges from 01/2016 to 02/2024. The goal is to try to predict the categ
 
 Using Scikit Learn, predictions have been made for both crime and criminal analysis. Proper Victim Analysis has also been done.
 
-## Files
+## Dataset
+Dataset contains incidents derived from KSP Crime Incident Reporting system. The data ranges from **2016 to 2024** (~8 years worth of data). 
+
+## Interface
+- The whole interface has been created using Flask, HTML, CSS and JavaScript. Six different categories of analysis has been provided `District Analysis, Crime Analysis, Time Analysis, Criminal Analysis, Victim Analysis, Beat/Police Analysis`. For each of the category, comprehensive and useful analysis, prediction and maps have been implemented.
+
+- **HTML**: HTML5 has been used throughout that uses forms and buttons for responsive collections of several inputs. Each and every page is linked to each other using relative hyperlinks and static images are being used to throughout to maintain a constant size of the overall website. For displaying graphs, canvas is used with an integration of chart.js library. Each and every components of the webpages are being organized through divs.
+
+- **CSS**: The overall structuring and design of the website is enhanced with css with proper shaping of the containers, hover effects and also the color combination of the webpage during light and dark modes.
+
+- **JS**: Overall responsiveness is being catered through NodeJS that usually uses the inputs and contains the defined functions to process and display the desired outputs. These functionalities are being used to create responsive charts for each combination of analysis and also acts as the bridge between HTML and Flask.
+
+- All the images have been taken from Unsplash for the use case in our project.
+
+The python files for each of the container is being provided for customising each page differently, and suited to its needs. Dedicated functions are presented, and following is the list of the files present in the directory.
+
+**Data Preparation for Analysis**
+
+`files_generator` function prepares data for analysis by reading relevant CSV files and extracting unique values for various attributes.
+
+- **Data Sources**:
+  - `FIR_Details_Data.csv`: Contains details of FIRs (First Information Reports).
+  - `AccusedData.csv`: Contains details of accused individuals.
+
+- **Data Extraction**:
+  - `years`: Unique years present in the FIR dataset.
+  - `crimeno`: Unique crime numbers present in the FIR dataset.
+  - `firno`: Unique FIR numbers present in the FIR dataset.
+  - `arrestid`: Unique arrest IDs present in the accused dataset.
+  - `districts`: Unique district names present in the FIR dataset.
+  - `unitid`: Unique unit IDs present in the FIR dataset.
+  - `crimehead`: Unique crime head names present in the FIR dataset.
+  - `crimegroup`: Unique crime group names present in the FIR dataset.
+  - `unit_name`: Unique unit names present in the FIR dataset.
+  - `beatname`: Unique beat names present in the FIR dataset.
+
+- **File Generation (Optional)**:
+  - This function optionally generates text files containing the unique values for certain attributes.
 
 ## Folders
 **Visualisationss**
@@ -83,37 +120,6 @@ Using Scikit Learn, predictions have been made for both crime and criminal analy
 - Each deployment plan is provided for each beat that is chosen by the user and is flexible enough to provide a deployment plan for any range of locations.
 - Each plan has a group of suggestions which not only provides the needful information for the police but also suggests the interactive activities that are being needed to involve the community and educate the potential victims hence spreading awareness, providing a holistic approach to the intended audience.
 
-## Dataset
-Dataset contains incidents derived from KSP Crime Incident Reporting system. The data ranges from **2016 to 2024** (~8 years worth of data). 
-
-## Interface
-- The whole interface has been created using Flask, HTML, CSS and JavaScript. The functions from jupyter notebook and prediction analysis have been re-used and made compatible for streamlit background. Six different categories of analysis has been provided `District Analysis, Crime Analysis, Time Analysis, Criminal Analysis, Victim Analysis, Beat/Police Analysis`. For each of the category, comprehensive and useful analysis, prediction and maps have been implemented.
-- All the images have been taken from Unsplash for the use case in our project.
-
-The python files for each of the container is being provided for customising each page differently, and suited to its needs. Dedicated functions are presented, and following is the list of the files present in the directory.
-
-**Data Preparation for Analysis**
-
-`files_generator` function prepares data for analysis by reading relevant CSV files and extracting unique values for various attributes.
-
-- **Data Sources**:
-  - `FIR_Details_Data.csv`: Contains details of FIRs (First Information Reports).
-  - `AccusedData.csv`: Contains details of accused individuals.
-
-- **Data Extraction**:
-  - `years`: Unique years present in the FIR dataset.
-  - `crimeno`: Unique crime numbers present in the FIR dataset.
-  - `firno`: Unique FIR numbers present in the FIR dataset.
-  - `arrestid`: Unique arrest IDs present in the accused dataset.
-  - `districts`: Unique district names present in the FIR dataset.
-  - `unitid`: Unique unit IDs present in the FIR dataset.
-  - `crimehead`: Unique crime head names present in the FIR dataset.
-  - `crimegroup`: Unique crime group names present in the FIR dataset.
-  - `unit_name`: Unique unit names present in the FIR dataset.
-  - `beatname`: Unique beat names present in the FIR dataset.
-
-- **File Generation (Optional)**:
-  - This function optionally generates text files containing the unique values for certain attributes.
 
 **Crime Analysis**
 
