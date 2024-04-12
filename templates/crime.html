@@ -1,0 +1,66 @@
+{% extends "core.html" %}
+{% block title %}
+Criminal Analysis
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/crime.css">
+<body>
+    <div class="bodyel">
+        <h1>Crime Analysis</h1>
+    <div class="tools">
+
+        <div class="image">
+            <img src="/static/images/2crime.jpg" alt="Not found">
+        </div>
+
+        <div class="options 1">
+            <div class="opt">
+                <form action="crime_selection" method="post">
+                    <span>
+                        <label for="crime">Select Crime</label>
+                        <select name="crimehead" id="crimehead">
+                            {% for crime in crimes %}
+                            <option value="{{ crimes }}">{{ crime }} </option>
+                            {% endfor %}  
+                        </select>
+                    </span>
+                    </form>
+                <form action="year_selection" method="post">
+                        <span>
+                            <label for="year">Select year</label>
+                            <select name="year" id="year">
+                                {% for year in years %}
+                                <option value="{{ year }}">{{ year }} </option>
+                                {% endfor %} 
+                            </select>
+                        </span>
+                        </form>
+            </div>
+            <div class="opt-btn">
+                <button type="button" id="crime_map"> <a href="crime_map">Crime Map</a></button>
+            </div>
+        </div>
+        <div class="options 2">
+            <form action="/CrimeHead_selection" method="post">
+                <span>
+                    <label for="CrimeHead">Select Crime</label>
+                    <select name="CrimeHead" id="CrimeHead">
+                        {% for crime in crimehead %}
+                            <option value="{{ crime }}">{{ crime }} </option>
+                        {% endfor %}
+                    </select>
+                </span>
+                <div class="opt-btn">
+                    <button type="submit" id="crimehotspots">Crime Hotspots</button>
+                </div>
+                <div class="opt-btn">
+                    <button type="button" id="crimePredictions">Crime Predictions</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="/static/js/crime.js"></script>
+
+{% endblock %}

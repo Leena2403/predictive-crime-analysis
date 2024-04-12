@@ -1,0 +1,67 @@
+{% extends "core.html" %}
+
+{% block title %}
+Time Analysis
+{% endblock %}
+
+{% block content %}
+
+<body>
+<link rel="stylesheet" href="/static/css/time-styles.css">
+    <div class="bodyel">
+        <h1>Police Performance Analysis</h1>
+    <div class="tools">
+
+        <div class="image">
+            <img src="/static/images/3police.jpg" alt="Not found">
+        </div>
+        <div class="options 1">
+            <form action="UnitName_selection" method="post">
+            <span>
+                <label for="unitname">Select Unit Name</label>
+                <select name="unitname" id="unitname">
+
+                    {% for unit in unitname %}
+                        <option value="{{ unit }}">{{ unit }}</option>
+                        {% endfor %}
+                </select>
+            </span>
+            </form>
+            <div class="opt-btn">
+                <button type="button" id="unit_name">Top Crimes Per Unit</button>
+            </div>
+        </div>
+        <div class="options 2">
+            <form action="Beat_selection" method="post">
+            <span>
+                <label for="BeatName">Select Beat Name</label>
+                <select name="BeatName" id="BeatName">
+                    {% for beat in beatname %}
+                        <option value="{{ beat }}">{{ beat }}</option>
+                        {% endfor %}
+                </select>
+            </span>
+            </form>
+            <div class="opt-btn">
+                <button type="button" id="beatname" style="width: 200px; height: 80px;">Top crimes per beat with Deployment Plan</button>
+            </div>
+        </div>
+        <div class="options 3">
+            <form action="crimegroup_selection" method="post">
+                <span>
+                    <label for="crimegroup">Select Crime</label>
+                    <select name="crimegroup" id="crimegroup">
+                        {% for crime in crimegroup %}
+                        <option value="{{ crimegroup }}">{{ crime }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                </form>
+                <div class="opt-btn">
+                    <button type="button" id="crimegp">Crimes per Beat</button>
+                </div>
+        </div>
+    </div>
+    </div>
+    <script src="/static/js/performance.js"></script>
+{%endblock%}

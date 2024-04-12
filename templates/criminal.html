@@ -1,0 +1,138 @@
+{% extends "core.html" %}
+{% block title %}
+Criminal Analysis
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/criminal.css">
+    <title>Criminal Analysis</title>
+    <div class="bodyel">
+        <h1>Criminal Analysis</h1>
+
+        <div class="image">
+            <img src="/static/images/5accused.jpg" alt="Not found">
+        </div>
+    <div class="tools">
+        <div class="options 1">
+            <div class="opt-1">
+                <form action="district_selection" method="post">
+                <span><label for="District">Select district</label>
+                    <select name="District" id="District">
+                        {% for district in districts %}
+                        <option value="{{ district }}">{{ district }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                </form>
+                <form action="unit_selection" method="post">
+                <span>
+                    <label for="UnitName">Select Unit Name </label>
+                    <select id="UnitName">
+                        {% for unit in unitname %}
+                        <option value="{{ unit }}">{{ unit }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                </span>
+                </form>
+                <form action="crimeno_selection" method="post">
+                <span>
+                    <label for="CrimeNo">Select Crime No.</label>
+                    <select name="Crime_No" id="CrimeNo">
+                        {% for crime in crimeno %}
+                        <option value="{{ crime }}">{{ crime }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                </span>
+                </form>
+            </div>
+            <div class="opt-2">
+                <span>
+                    <label for="Month">Select Month</label>
+                    <select name="Month" id="Month">
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </span>
+                <form action="year_selection" method="post">
+                <span>
+                    <label for="Year">Select Year</label>
+                    <select name="Year" id="Year">
+                        {% for year in years %}
+                        <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                </form>
+            </div>
+            <div class="opt-btn">
+                <button type="button" id="ConfidenceMatrix">
+                    <a href="confidence">Compute Confidence Matrix</a></button>
+            </div>
+            <div id='chart' class='chart'”></div>
+        </div>
+        <div class="options 2">
+            <form action="arrest_id" method="post">
+            <span>
+                <label for="arrestid">Select Arrest ID</label>
+                <select name="arrestid" id="arrestid">
+                    {% for arr in arrestid %}
+                        <option value="{{ arr }}">{{ arr }}</option>
+                        {% endfor %}
+                </select>
+            </span>
+            </form>
+            <div class="opt-btn">
+                <button type="button" id="arrestID">Arrest IDs Data</button>
+            </div>
+        </div>
+        <div class="options 3">
+            <div class="opt-3">
+                <form action="FIR_selection">
+                <span><label for="FIRNo">Select FIR No.</label>
+                    <select name="FIRNo" id="FIRNo">
+                        {% for fir in firs %}
+                        <option value="{{ FIRNo }}">{{ fir }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                </form>
+                <form action="unit_id" method="post">
+                <span>
+                    <label for="Unitid">Select Unit ID</label>
+                    <select name="Unitid" id="Unitid">
+
+                        {% for unit in unitid %}
+                        <option value="{{ unitid }}">{{ unit }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                </form>
+                <form action="crimesno_selection" method="post">
+                <span>
+                    <label for="CrimesNo">Select Crime No.</label>
+                    <select name="CrimesNo" id="CrimesNo">
+                        {% for crime in crimeno2 %}
+                        <option value="{{ crimeno2 }}">{{ crime }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                </form>
+            </div>
+            <button type="button" id="criminalprediction">Criminal Prediction</button>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}    

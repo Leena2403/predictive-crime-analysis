@@ -1,0 +1,77 @@
+{% extends "core.html" %}
+
+{% block title %}
+Time Analysis
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/time-styles.css">
+<body>
+    <div class="bodyel">
+        <h1>Time-Wise Analysis</h1>
+    <div class="tools">
+        <div class="image">
+            <img src="/static/images/3time.jpg" alt="Not found">
+        </div>
+        <div class="options 1">
+            <form action="crimegp_selection" method="post">
+            <span>
+                <label for="crimegrp">Select Crime</label>
+                <select name="crimegrp" id="crimegrp">
+                    {% for crime in crimegroup %}
+                        <option value="{{ crime }}">{{ crime }} </option>
+                        {% endfor %}
+                </select>
+            </span>
+            </form>
+            <div class="opt-btn">
+                <button type="button" id="crime_grp">Crime per Month</button>
+            </div>
+        </div>
+        <div class="options 2">
+            <form action="time_selection" method="post">
+            <span>
+                <label for="freq">Select Frequency</label>
+                <select name="freq" id="freq">
+                    <option value="Year">Year</option>
+                    <option value="Month">Month</option>
+                </select>
+            </span>
+            </form>
+            <div class="opt-btn">
+                <button type="button" id="frequent">Top Crime</button>
+            </div>
+        </div>
+        <div class="options 3">
+            <form action="year_selection" method="post">
+                <span>
+                    <label for="year">Select Year</label>
+                    <select name="year" id="year">
+                        {% for year in years %}
+                        <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                <div class="opt-btn">
+                    <button id="'time_freq">Top Crimes Map</button>
+                </div>
+            </form>
+        </div>
+        <div class="options 4">
+            <form action="date_selection" method="post">
+                <span>
+                    <label for="label_date">Select DateType</label>
+                    <select name="label_date" id="label_date">
+                        <option value="Offence_Frome">Start Date</option>
+                        <option value="Offence_To">End Date</option>
+                    </select>
+                </span>
+                </form>
+                <div class="opt-btn">
+                    <button type="button" id="time_freq">Time Analysis</button>
+                </div>
+        </div>
+    </div>
+    </div>
+    <script src="/static/js/time-script.js"></script>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "core.html" %}
+
+{% block title %}
+District Analysis
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/district.css">
+
+<div class="bodyel">
+    <h1>District Analysis</h1>
+    <div class="tools">
+
+        <div class="image">
+            <img src="/static/images/1district.jpg" alt="Not found">
+        </div>
+        <div class="options">
+            <!-- <span><label for="District">Select District</label>
+                <select name="District" id="District"></select> 
+            </span> -->
+            <form action="/dropdown_selection" method="POST" id="districtForm">
+                <span>
+                    <label for="district">Select District:</label>
+                    <select name="district" id="district">
+                        {% for district in districts %}
+                        <option value="{{ district }}">{{ district }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+            </form>
+
+            <form action="/year_selection" method="POST" id="yearForm">
+                <span>
+                    <label for="year">Select Year:</label>
+                    <select name="year" id="year">
+                        {% for year in years %}
+                        <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+            
+        </div>
+        <div class="buttons">
+                <button type="button" id="districtAnalysisBtn">District Map</button>
+            <button type="button" id="yearAnalysisBtn">Analysis</button>
+            <button class="district-heatmap">District Heatmap</button>
+        </div>
+        <canvas id="crimeChart"></canvas>
+    </div>
+</div>
+<script src="/static/js/district.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{% endblock %}

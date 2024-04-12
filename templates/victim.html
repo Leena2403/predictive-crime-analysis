@@ -1,0 +1,53 @@
+{% extends "core.html" %}
+
+{% block title %}
+District Analysis
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/victim.css">
+<body>
+    <div class="bodyel">
+        <h1>Victim Analysis</h1>
+    <div class="tools">
+
+        <div class="image">
+            <img src="/static/images/6victim.jpeg" alt="Not found">
+        </div>
+
+        <div class="options 3">
+            <form action="/victim_selection" method="post">
+                <span>
+                    <label for="crimehead">Select Crime Head</label>
+                    <select name="crimehead" id="crimehead">
+                        {% for crime in crimeheads %}
+                        <option value="{{ crime }}">{{ crime }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                <div class="opt-btn">
+                    <button id="vulnerable_map">Top Crimes Map</button>
+                </div>
+            </form>
+        </div>
+        
+        </div>
+        <div class="options 2">
+            <form action="CrimeNo_selection" method="post">
+            <span>
+                <label for="CrimeNo">Select Crime No.</label>
+                <select name="Crimeno" id="CrimeNo">
+                    {% for crime in crimeno %}
+                        <option value="{{ crimeno }}">{{ crime }} </option>
+                        {% endfor %}
+                </select>
+            </span>
+            </form>
+            <div class="opt-btn">
+                <button type="button" id="crimeno">Vulnerable Details</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="victim-script.js"></script>
+{% endblock %}
